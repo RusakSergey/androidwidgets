@@ -302,23 +302,23 @@ class ColorRatingWidget @JvmOverloads constructor(
     }
 
     private fun drawText(canvas: Canvas) {
-        fun draw(positionX: Int, text: String) {
-            val paint: Paint = if (currentSelectX >= positionX - markerWidth / 2) {
+        fun draw(index: Int, text: String) {
+            val paint: Paint = if (currentSelectX >= positionMarkerArray[index]) {
                 paintTextSelected
             } else {
                 paintTextDefault
             }
             paint.getTextBounds(text.toUpperCase(resources.configuration.locale), 0, text.length, rect)
-            canvas.drawText(text, positionX.toFloat(),
+            canvas.drawText(text, textPositionArray[index].toFloat(),
                     (canvas.height / 2 + rect.height() / 3).toFloat(), paint)
         }
 
         if (displayNames == null) {
             for (i in 0 until quantity) {
-                draw(textPositionArray[i], (if (isStartZero) i else i + 1).toString())
+                draw(i, (if (isStartZero) i else i + 1).toString())
             }
         } else {
-            displayNames!!.forEachIndexed { index, s -> draw(textPositionArray[index], s) }
+            displayNames!!.forEachIndexed { index, s -> draw(index, s) }
         }
     }
 
@@ -344,6 +344,7 @@ class ColorRatingWidget @JvmOverloads constructor(
                 }
                 MotionEvent.ACTION_UP -> {
                     selectItemPosition = findNearest(event.x, positionMarkerArray)
+                    currentSelectX = event.x
                     invalidate()
                 }
             }
