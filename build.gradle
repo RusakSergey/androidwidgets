@@ -30,4 +30,3 @@ task clear(type: Delete) {
 task customClean(type: Delete) {
     delete rootProject.buildDir
 }
-clean.dependsOn customClean
