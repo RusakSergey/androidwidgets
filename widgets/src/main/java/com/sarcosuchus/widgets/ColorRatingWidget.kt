@@ -154,7 +154,9 @@ class ColorRatingWidget @JvmOverloads constructor(
         set(value) {
             field = value
             currentSelectX = calculateXFromPosition(value)
-            mColorRatingListener?.onChange(value, colorMarkerArray[value])
+            if (value != DEFAULT_NOTHING) {
+                mColorRatingListener?.onChange(value, colorMarkerArray[value])
+            }
             invalidate()
         }
 
