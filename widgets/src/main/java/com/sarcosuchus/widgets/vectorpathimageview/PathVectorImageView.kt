@@ -47,7 +47,7 @@ class PathVectorImageView @JvmOverloads constructor(
             setImageDrawable(ContextCompat.getDrawable(context, newValue))
             vectorChildFinder = VectorChildFinder(context, newValue, this).apply {
                 if (pathBackground == null) {
-                   pathBackground = findPathByName(pathNameBackground)
+                    pathBackground = findPathByName(pathNameBackground)
                 }
                 pathBackground!!.fillColor = colorBackground
             }
@@ -89,12 +89,18 @@ class PathVectorImageView @JvmOverloads constructor(
         }
     }
 
-    fun getSelecteionPosition() = step
+    fun getSelectedPosition() = step
 
     fun setSelectedPosition(position: Int) {
         step = position
         drawVectorImage()
     }
+
+    fun getRegionName() = currentVectorPath?.name ?: ""
+
+    fun getRegionDescription() = currentVectorPath?.description ?: ""
+
+    fun getCountRegion() = vectorPathArray.count()
 
     fun isFirstRegion() = step == 0
 
