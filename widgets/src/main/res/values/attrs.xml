@@ -12,4 +12,11 @@
         <attr name="text_appearance_default" format="reference"/>
         <attr name="text_appearance_selected" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="PathVectorImageView">
+        <attr name="color_background_image" format="color"/>
+        <attr name="path_name_background_image" format="string"/>
+        <attr name="color_stroke_image" format="color"/>
+        <attr name="vector_drawable" format="reference"/>
+    </declare-styleable>
 </resources>

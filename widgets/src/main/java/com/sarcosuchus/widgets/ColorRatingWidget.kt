@@ -12,12 +12,12 @@ import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.sarcosuchus.widgets.Constants.Common.DEFAULT_NOTHING
 import java.math.BigDecimal
 import kotlin.properties.Delegates
 
 private const val DEFAULT_MAX_RATING = 5
 private const val DEFAULT_MARGIN_BETWEEN = 10
-private const val DEFAULT_NOTHING = -1
 
 class ColorRatingWidget @JvmOverloads constructor(
         context: Context,
@@ -250,7 +250,7 @@ class ColorRatingWidget @JvmOverloads constructor(
         this.mColorRatingListener = colorRatingListener
     }
 
-    fun getCurrentColor(position: Int): Int = colorMarkerArray[position]
+    fun getCurrentColor(): Int? = if (selectItemPosition == DEFAULT_NOTHING) null else colorMarkerArray[selectItemPosition]
 
     fun getSelectItem(): Int = if (selectItemPosition == DEFAULT_NOTHING) 0 else selectItemPosition
 
