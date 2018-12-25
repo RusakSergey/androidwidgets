@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Widgets</string>
+
+    <string-array name="pain_region">
+        <item>Cervical</item>
+        <item>Thoracic</item>
+        <item>Shoulders</item>
+        <item>Shoulder blades</item>
+        <item>Diaphragm</item>
+        <item>Elbows</item>
+        <item>Lumbar</item>
+        <item>Pelvis</item>
+        <item>Hips</item>
+        <item>Wrists and hands</item>
+        <item>Knees</item>
+        <item>Ankles and feet</item>
+    </string-array>
+
+    <string-array name="pain_region_description">
+        <item>Consisting of 7 vertebral connections to form the \"neck\", the cervical region is the most mobile part of the spine. It is responsible for protection of the spinal cord, movement of the neck and support of the skull.</item>
+        <item>Situated between the cervical region and the lumbar region of the spine, the thoracic section is composed of 12 vertebral connections. It is responsible for the support of the ribs, weight of the upper body and protection of the spinal cord.</item>
+        <item>The human shoulder is made up of 3 bones: the clavicle (collarbone), the scapula (shoulder blade), and the humerus (upper arm bone) as well as associated muscles, ligaments and tendons. It is also the most mobile joint in the body and has the greatest range of motion of any joint.</item>
+        <item>The scapula or the shoulder blade is a flat triangular shaped bone connecting the upper arm bone to the collarbone. There are only 3 muscles that enable upward and backward movement of the shoulder blade - the trapezius, levator and the rhomboideus (major and minor) muscles.</item>
+        <item>The thoracic diaphragm is a dome-shaped sheet of muscle that separates the heart and lungs from the abdomen. It plays a vital role in the breathing process, contracting and drawing air into the lungs.</item>
+        <item>The elbow is a joint between the upper and lower parts of the arm. The elbow joint allows the forearm and hand to be moved towards and away from the body.</item>
+        <item>The lumbar region of the spine, more commonly known as the lower back, consists of five vertebrae. It is situated between the chest and the sacrum region of the spine.</item>
+        <item>Located in the lower torso between the abdomen and the thighs, the pelvis is a group of bones that protect delicate organs of the abdominopelvic cavity while anchoring the muscles of the hip, thigh, and abdomen.</item>
+        <item>The hip joints primary function is to support the weight of the body in both static (e.g. standing) and dynamic (e.g. walking or running) postures. The hip joint is also the most important part in retaining balance. </item>
+        <item>The hand is made up of 27 distinct bones with many muscles and ligaments. Along with the wrist, also a complex bone framework that bridges the hand to the forearm, the two enable a person to perform a wide range of movements.</item>
+        <item>The knee is one of the largest and most complex joints in the body joining the thigh bone to the shin bone. Being a modified hinge joint, it is most vulnerable to injury and to cartilage breakdown.</item>
+        <item>The foot and ankle consist of 33 bones, 26 joints and 100+ muscles, ligaments and tendons working together to provide a stable base to stand upright as well as allow movements needed for motion and balance.</item>
+    </string-array>
+</resources>

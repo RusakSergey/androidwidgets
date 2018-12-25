@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorRatingWidget">
+        <attr name="max_rating_value" format="integer"/>
+        <attr name="start_zero" format="boolean"/>
+        <attr name="display_names" format="reference"/>
+        <attr name="text_visibility" format="boolean"/>
+        <attr name="margin_between" format="dimension"/>
+        <attr name="start_color" format="color"/>
+        <attr name="middle_color" format="color"/>
+        <attr name="end_color" format="color"/>
+        <attr name="text_appearance_default" format="reference"/>
+        <attr name="text_appearance_selected" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="PathVectorImageView">
+        <attr name="color_background_image" format="color"/>
+        <attr name="path_name_background_image" format="string"/>
+        <attr name="color_stroke_image" format="color"/>
+        <attr name="vector_drawable" format="reference"/>
+    </declare-styleable>
+</resources>
