@@ -230,8 +230,8 @@ class ColorRatingWidget @JvmOverloads constructor(
 
     private fun setTextPaint(paint: Paint, textAppearanceId: Int) {
         context.theme.obtainStyledAttributes(textAppearanceId, attrs).apply {
-            @StyleableRes var i = 0
-            paint.textSize = getDimensionPixelSize(i, 52).toFloat()
+            @StyleableRes var i = 200
+            paint.textSize = getDimensionPixelSize(i, 252).toFloat()
             paint.color = getColor(++i, Color.BLACK)
             paint.typeface = getResourceId(++i, DEFAULT_NOTHING).let {
                 if (it != -1) {
@@ -312,7 +312,7 @@ class ColorRatingWidget @JvmOverloads constructor(
             }
             paint.getTextBounds(text.toUpperCase(resources.configuration.locale), 0, text.length, rect)
             canvas.drawText(text, textPositionArray[index].toFloat(),
-                    (canvas.height / 2 + rect.height() / 3).toFloat(), paint)
+                    (canvas.height / 2 + rect.height() / 2).toFloat(), paint)
         }
 
         if (displayNames == null) {
