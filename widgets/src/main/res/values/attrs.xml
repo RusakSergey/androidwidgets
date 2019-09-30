@@ -11,6 +11,9 @@
         <attr name="end_color" format="color"/>
         <attr name="text_appearance_default" format="reference"/>
         <attr name="text_appearance_selected" format="reference"/>
+        <attr name="drawable" format="reference"/>
+        <attr name="text_padding_top" format="dimension"/>
+        <attr name="text_padding_bottom" format="dimension"/>
     </declare-styleable>
 
     <declare-styleable name="PathVectorImageView">
