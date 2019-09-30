@@ -312,7 +312,7 @@ class ColorRatingWidget @JvmOverloads constructor(
             }
             paint.getTextBounds(text.toUpperCase(resources.configuration.locale), 0, text.length, rect)
             canvas.drawText(text, textPositionArray[index].toFloat(),
-                    (canvas.height / 2 + rect.height() / 3).toFloat(), paint)
+                    (canvas.height / 2 + rect.height() / 2).toFloat(), paint)
         }
 
         if (displayNames == null) {
