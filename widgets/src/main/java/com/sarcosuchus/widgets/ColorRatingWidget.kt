@@ -36,11 +36,8 @@ class ColorRatingWidget @JvmOverloads constructor(
     private val startColorDefault = Color.parseColor("#66b456")
     private val middleColorDefault = Color.parseColor("#f4b342")
     private val endColorDefault = Color.parseColor("#c2362a")
+    private val srcDrawableDefault = ContextCompat.getDrawable(context, R.drawable.ic_color_rating) as Drawable
     private val rect = Rect()
-
-    private val srcDrawable: Drawable by lazy {
-        ContextCompat.getDrawable(context, R.drawable.ic_color_rating)!!
-    }
 
     private val redColors: Array<Int> by lazy {
         arrayOf(Color.red(startColorDefault), Color.red(middleColorDefault), Color.red(endColorDefault))
@@ -60,6 +57,8 @@ class ColorRatingWidget @JvmOverloads constructor(
         Paint(Paint.ANTI_ALIAS_FLAG)
     }
 
+    var srcDrawable: Drawable = srcDrawableDefault
+
     private var markerWidth: Int by Delegates.observable(srcDrawable.intrinsicWidth) { _, _, newValue ->
         markerWidthWithSpace = marginBetween + newValue
         positionMarkerArray = IntArray(quantity) { i ->
@@ -69,6 +68,10 @@ class ColorRatingWidget @JvmOverloads constructor(
         textPositionArray = IntArray(quantity) { i -> positionMarkerArray[i] + newValue / 2 }
         invalidate()
     }
+
+//    var srcDrawable: Drawable by Delegates.observable(srcDrawableDefault) { _,_,_->
+//        invalidate()
+//    }
 
     var isTextVisibility: Boolean by Delegates.observable(false) { _, _, _ ->
         invalidate()
@@ -179,6 +182,7 @@ class ColorRatingWidget @JvmOverloads constructor(
                             R.styleable.ColorRatingWidget_end_color -> endColor = typedArray.getColor(resId, endColorDefault)
                             R.styleable.ColorRatingWidget_text_appearance_default -> textAppearanceDefault = typedArray.getResourceId(resId, DEFAULT_NOTHING)
                             R.styleable.ColorRatingWidget_text_appearance_selected -> textAppearanceSelected = typedArray.getResourceId(resId, DEFAULT_NOTHING)
+                            R.styleable.ColorRatingWidget_drawable -> srcDrawable = typedArray.getDrawable(resId) ?: srcDrawableDefault
                         }
                     }
             typedArray.recycle()
@@ -312,7 +316,7 @@ class ColorRatingWidget @JvmOverloads constructor(
             }
             paint.getTextBounds(text.toUpperCase(resources.configuration.locale), 0, text.length, rect)
             canvas.drawText(text, textPositionArray[index].toFloat(),
-                    (canvas.height / 2 + rect.height() / 3).toFloat(), paint)
+                    (canvas.height / 2 + rect.height() / 2).toFloat(), paint)
         }
 
         if (displayNames == null) {
