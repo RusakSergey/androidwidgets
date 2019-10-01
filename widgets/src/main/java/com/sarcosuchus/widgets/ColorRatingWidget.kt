@@ -230,7 +230,7 @@ class ColorRatingWidget @JvmOverloads constructor(
 
     private fun setTextPaint(paint: Paint, textAppearanceId: Int) {
         context.theme.obtainStyledAttributes(textAppearanceId, attrs).apply {
-            @StyleableRes var i = 200
+            @StyleableRes var i = 210
             paint.textSize = getDimensionPixelSize(i, 252).toFloat()
             paint.color = getColor(++i, Color.BLACK)
             paint.typeface = getResourceId(++i, DEFAULT_NOTHING).let {
